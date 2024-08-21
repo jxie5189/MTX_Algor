@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>mtx-algo</title>
+    <script>
+        function validateForm(){
+            const infusionStartDate = document.getElementById("infusionStartDateInput").value;
+            const infusionStartTime = document.getElementById("infusionStartTimeInput").value;
+            const mtx_checkDate = document.getElementById("mtx_checkDateInput").value;
+            const mtx_checkTime = document.getElementById("mtx_checkTimeInput").value;
+            const mtxlvl = document.getElementById("mtxlvlInput").value;
+
+            if (infusionStartDate && infusionStartTime && mtx_checkDate && mtx_checkTime && mtxlvl) {
+                return true;
+            }
+            else{
+                alert("All fields are required.");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+<h1>MTX Algor</h1>
+
+<form th:action="@{run}" th:method="post" th:object="${patient}" onsubmit="return validateForm()">
+<p>
+    <label>MTX Infusion Start Date</label>
+    <input type="date" id="infusionStartDateInput" th:field="*{infusionStartDate}"/>
+    <div th:if="${#fields.hasErrors('infusionStartDate')}" th:errors="*{infusionStartDate}">Infusion Start Date Error</div>
+</p>
+
+<p>
+    <label>MTX Infusion Start Time</label>
+    <input type="time" id="infusionStartTimeInput" th:field="*{infusionStartTime}"/>
+    <div th:if="${#fields.hasErrors('infusionStartTime')}" th:errors="*{infusionStartTime}">Infusion Start Time Error</div>
+</p>
+
+<p>
+    <label>Last mtx level Date</label>
+    <input type="date" id="mtx_checkDateInput" th:field="*{mtx_checkDate}"/>
+    <div th:if="${#fields.hasErrors('mtx_checkDate')}" th:errors="*{mtx_checkDate}">MTX Check Date Error</div>
+</p>
+
+<p>
+    <label>Last mtx level Time</label>
+    <input type="time" id="mtx_checkTimeInput" th:field="*{mtx_checkTime}"/>
+    <div th:if="${#fields.hasErrors('mtx_checkTime')}" th:errors="*{mtx_checkTime}">MTX Check Time Error</div>
+</p>
+
+<p>
+    <label>Last mtx level</label>
+    <input type="text" id="mtxlvlInput" th:field="*{mtxlvl}"/>
+    <div th:if="${#fields.hasErrors('mtxlvl')}" th:errors="*{mtxlvl}">MTX Level Error</div>
+</p>
+
+    <button type="submit">Run</button>
+
+    <button th:href="@{/}">Clear All</button>
+</form>
+<br>
+</body>
+</html>
