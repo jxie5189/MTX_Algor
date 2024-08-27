@@ -19,6 +19,14 @@
                 return false;
             }
         }
+
+        function clearAllFields(){
+            document.getElementById("infusionStartDateInput").value = "";
+            document.getElementById("infusionStartTimeInput").value = "";
+            document.getElementById("mtx_checkDateInput").value = "";
+            document.getElementById("mtx_checkTimeInput").value = "";
+            document.getElementById("mtxlvlInput").value = "";
+        }
     </script>
 </head>
 
@@ -58,8 +66,15 @@
 
     <button type="submit">Run</button>
 
-    <button th:href="@{/}">Clear All</button>
+    <button type="button" onclick="clearAllFields()">Clear All</button>
 </form>
 <br>
+
+<p><em>Foster JH, Bernhardt MelanieB, Thompson PA,
+    Smith EO, Schafer ES. Using a bedside algorithm to
+    individually dose high-dose methotrexate for patients at risk for toxicity.
+    Journal of Pediatric Hematology/Oncology. 2017;39(1):72-76. doi:10.1097/mph.0000000000000696
+</em></p>
+
 </body>
 </html>
