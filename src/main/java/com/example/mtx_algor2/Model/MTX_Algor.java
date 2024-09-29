@@ -6,7 +6,6 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Iterator;
 
 public class MTX_Algor {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
@@ -20,7 +19,6 @@ public class MTX_Algor {
         this.mtxlvl = Float.parseFloat(pt.getMtxlvl());
         this.startDateTime = LocalDateTime.of(pt.getInfusionStartDate(), pt.getInfusionStartTime());
         this.mtx_checkTime = LocalDateTime.of(pt.getMtx_checkDate(), pt.getMtx_checkTime());
-
     }
 
     public long timeSpent(LocalDateTime start, LocalDateTime end) {
