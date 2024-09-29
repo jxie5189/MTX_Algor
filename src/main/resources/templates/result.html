@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MTX_Algor Result</title>
+</head>
+<body>
+<h1>MTX_Algor Recommendation</h1>
+
+<div style="display: flex; align-items: flex-start;">
+    <div style="flex: 1;">
+        <p>
+            <label>MTX Start Time: </label>
+            <span th:text="${mtxStartDateTime}"></span>
+        </p>
+
+        <p>
+            <label>MTX Level:  </label>
+            <span th:text="${mtxLevel}"></span>
+        </p>
+
+        <p>
+            <label>MTX Level Check Time: </label>
+            <span th:text="${mtxCheckDateTime}"></span>
+        </p>
+
+        <p>
+            <label>Recommendation: </label>
+            <span th:text="${result}"></span>
+        </p>
+
+        <a th:href="@{/}">
+            <button>Re-do</button>
+        </a>
+
+        <p><em>
+            Foster JH, Bernhardt MelanieB, Thompson PA, Smith EO, Schafer ES. Using a bedside algorithm to individually
+            dose high-dose methotrexate for patients at risk for toxicity. Journal of Pediatric Hematology/Oncology.
+            2017;39(1):72-76. doi:10.1097/mph.0000000000000696
+        </em></p>
+    </div>
+
+    <div style="flex: 1; margin-left: 20px;">
+        <img src="Mtx_Algor_image.jpeg" alt="Original Algorithm" style="max-width: 100%;">
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>MTX_Algor Result</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>MTX_Algor Recommendation</h1>-->
+
+<!--<p>-->
+<!--    <labl>MTX Start Time: </labl>-->
+<!--    <span th:text="${mtxStartDateTime}"></span>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--    <lable>MTX Level:  </lable>-->
+<!--    <span th:text="${mtxLevel}"></span>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--    <label>MTX Level CheckTime: </label>-->
+<!--    <span th:text="${mtxCheckDateTime}"></span>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--    <label>Recommendation: </label>-->
+<!--    <span th:text="${result}"></span>-->
+<!--</p>-->
+
+<!--<a th:href="@{/}">-->
+<!--    <button>Re-do</button>-->
+<!--</a>-->
+
+<!--<p><em>Foster JH, Bernhardt MelanieB, Thompson PA, Smith EO, Schafer ES. Using a bedside algorithm to individually dose high-dose methotrexate for patients at risk for toxicity. Journal of Pediatric Hematology/Oncology. 2017;39(1):72-76. doi:10.1097/mph.0000000000000696</em></p>-->
+
+<!--</body>-->
+<!--</html>-->
